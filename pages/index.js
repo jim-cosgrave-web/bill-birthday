@@ -21,10 +21,11 @@ export default function Home() {
           <img src="images/prof-oak.png" /> */}
 
           {/* <img src="images/family.jpg" /> */}
-          <img src="images/prof-oak-2.png" />
+          <img src="images/prof-oak-3.png" />
         </div>
         <footer>
-          This is the footer!
+          <button>Back</button>
+          <button>Next</button>
         </footer>
       </main>
 
@@ -148,24 +149,9 @@ export default function Home() {
 
         .img-container {
           position: fixed;
-          bottom: 0
+          bottom: -5px
         }
 
-        footer {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: #3B4CCA;
-          color: white;
-          border-top: 2px solid black;
-
-          width: 100%;
-          height: 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
 
         .prompt {
           border: 2px solid #B3A125;
@@ -180,6 +166,27 @@ export default function Home() {
           display: flex;
           align-items: center;
           font-size: 24px;
+        }
+
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #3B4CCA;
+          color: white;
+          border-top: 2px solid black;
+
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+        }
+
+        button {
+          padding: 12px 30px;
         }
       `}</style>
 
