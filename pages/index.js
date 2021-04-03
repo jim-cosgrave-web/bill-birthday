@@ -8,55 +8,33 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Happy Birthday Bill!
-        </h1>
-
-        <div>
-          <img src="images/pokeball.png" />
+        {/* <h1 className="title">
+          Test Site
+        </h1> */}
+        <div className="prompt">
+          Hello Bill!  Would you like to help me with some research?
         </div>
+
+        <div className="img-container">
+          {/* <img src="images/pokeball.png" />
+
+          <img src="images/prof-oak.png" /> */}
+
+          {/* <img src="images/family.jpg" /> */}
+          <img src="images/prof-oak-2.png" />
+        </div>
+        <footer>
+          This is the footer!
+        </footer>
       </main>
 
 
 
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
         main {
-          padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        img {
-          max-width: 100%;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
           justify-content: center;
           align-items: center;
         }
@@ -147,11 +125,61 @@ export default function Home() {
           height: 1em;
         }
 
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
+
+
+
+
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(247,247,247);
+        }
+
+        h1 {
+          margin-top: 0;
+        }
+
+        img {
+          max-width: 100%;
+        }
+
+        .img-container {
+          position: fixed;
+          bottom: 0
+        }
+
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #3B4CCA;
+          color: white;
+          border-top: 2px solid black;
+
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .prompt {
+          border: 2px solid #B3A125;
+          border-radius: 5px;
+          width: 90%;
+          padding: 1em;
+          margin: 12px;
+          background: white;
+          min-height: 150px;
+          position: relative;
+          z-index: 10000;
+          display: flex;
+          align-items: center;
+          font-size: 24px;
         }
       `}</style>
 
@@ -163,6 +191,10 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+
+          min-height: 10000px;
+          background: rgb(247, 247, 247);
+          overflow: hidden;
         }
 
         * {
@@ -172,3 +204,11 @@ export default function Home() {
     </div>
   )
 }
+
+/*
+Pokemon Red - #FF0000
+Pokemon Uni Red - #CC0000
+Pokemon Cerulean Blue - #3B4CCA
+Pokemon Yellow - #FFDE00
+Pokemon Gold Foil - #B3A125
+*/
