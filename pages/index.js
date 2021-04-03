@@ -151,7 +151,7 @@ export default function Home() {
 
         .img-container {
           position: fixed;
-          bottom: -5px
+          bottom: -30px
         }
 
 
