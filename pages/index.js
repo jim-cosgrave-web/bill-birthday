@@ -1,6 +1,28 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [screens, setScreens] = useState([
+    {
+      text: 'Hello Bill!  Would you like to help me with some research?',
+      img: 'images/prof-oak-3.png',
+      backButton: null,
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Lets go!',
+      img: 'images/prof-oak.png',
+      backButton: 'Back',
+      nextButton: 'Next'
+    }
+  ]);
+
+  const [currentScreen, setCurrentScreen] = useState(0);
+
+  function handleNextClick() {
+    setCurrentScreen(currentScreen + 1);
+  }
+
   return (
     <div className="container">
       <Head>
@@ -12,20 +34,15 @@ export default function Home() {
           Test Site
         </h1> */}
         <div className="prompt">
-          Hello Bill!  Would you like to help me with some research?
+          {screens[currentScreen].text}
         </div>
 
         <div className="img-container">
-          {/* <img src="images/pokeball.png" />
-
-          <img src="images/prof-oak.png" /> */}
-
-          {/* <img src="images/family.jpg" /> */}
-          <img src="images/prof-oak-3.png" />
+          <img src={screens[currentScreen].img} />
         </div>
         <footer>
-          <button>Back</button>
-          <button>Next</button>
+          {screens[currentScreen].backButton && <button>{screens[currentScreen].backButton}</button>}
+          {screens[currentScreen].nextButton && <button onClick={handleNextClick}>{screens[currentScreen].nextButton}</button>}
         </footer>
       </main>
 
