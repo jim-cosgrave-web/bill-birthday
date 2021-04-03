@@ -13,7 +13,7 @@ export default function Home() {
         </h1>
 
         <div>
-          <img src="images/prof-oak.png" />
+          <img src="images/pokeball.png" />
         </div>
       </main>
 
