@@ -131,6 +131,8 @@ export default function Home() {
 
 
 
+
+
         .container {
           display: flex;
           flex-direction: column;
@@ -187,6 +189,16 @@ export default function Home() {
 
         button {
           padding: 12px 30px;
+          background: #CC0000;
+          color: #fff;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+          font-size: 20px;
+          border: 0;
+          width: 30%;
+          border: 1px solid #000;
+          border-radius: 5px;
         }
       `}</style>
 
