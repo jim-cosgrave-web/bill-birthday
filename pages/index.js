@@ -6,30 +6,80 @@ export default function Home() {
     {
       text: 'Happy Birthday Bill!',
       img: 'images/pokeball.png',
-      backButton: 'Back',
-      nextButton: 'Yes!'
+      backButton: '<<',
+      nextButton: 'Lets go!'
     },
     {
       text: 'Hello Bill!  Would you like to help me with some research?',
       img: 'images/prof-oak-3.png',
-      backButton: 'Back',
+      backButton: '<<',
       nextButton: 'Yes!'
     },
     {
       text: 'Lets go!',
       img: 'images/prof-oak.png',
-      backButton: 'Back',
-      nextButton: 'Next'
+      backButton: '<<',
+      nextButton: 'Okay!'
     },
     {
       text: 'This is the world of pokemon.  There are many different types of pokemon all with strengths and weaknesses.',
       img: 'images/world-map.png',
-      backButton: 'Back',
+      backButton: '<<',
       nextButton: 'Next'
+    },
+    {
+      text: 'Fire type pokemon are strong against grass type pokemon, but they are weak against water type pokemon',
+      img: 'images/fire-type-pokemon.jpg',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'Water type pokemon are strong against fire type pokemon, but are weak against grass type pokemon',
+      img: 'images/water-type-pokemon.jpg',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'Grass type pokemon are strong against water type pokemon, but are weak against water type pokemon',
+      img: 'images/grass-type-pokemon.jpg',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'I want to study a few pokemon of different types.  This will help us become better pokemon trainers.  Will you help me?',
+      img: 'images/prof-oak-3.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'First I want to start with a grass type pokemon called Bulbasaur',
+      img: 'images/bulbasaur.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'Grass type pokemon love...grass!  They also love plants.',
+      img: 'images/grass.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'Another trainer sent me this picture and said she saw some bulbasaur near by.  Can you check out this location?',
+      img: 'images/grass.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
     }
+
+
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState(10);
 
   function handleNextClick() {
     if (currentScreen < screens.length - 1) {
@@ -83,6 +133,7 @@ export default function Home() {
           justify-content: center;
           align-items: center;
           width: 100%;
+          height: 100%;
         }
 
         a {
