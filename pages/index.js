@@ -79,7 +79,7 @@ export default function Home() {
 
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(10);
+  const [currentScreen, setCurrentScreen] = useState(0);
 
   function handleNextClick() {
     if (currentScreen < screens.length - 1) {
