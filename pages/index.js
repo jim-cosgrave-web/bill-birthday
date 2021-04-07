@@ -4,14 +4,26 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
   const [screens, setScreens] = useState([
     {
+      text: 'Happy Birthday Bill!',
+      img: 'images/pokeball.png',
+      backButton: 'Back',
+      nextButton: 'Yes!'
+    },
+    {
       text: 'Hello Bill!  Would you like to help me with some research?',
       img: 'images/prof-oak-3.png',
-      backButton: null,
+      backButton: 'Back',
       nextButton: 'Yes!'
     },
     {
       text: 'Lets go!',
       img: 'images/prof-oak.png',
+      backButton: 'Back',
+      nextButton: 'Next'
+    },
+    {
+      text: 'This is the world of pokemon.  There are many different types of pokemon all with strengths and weaknesses.',
+      img: 'images/world-map.png',
       backButton: 'Back',
       nextButton: 'Next'
     }
@@ -20,7 +32,15 @@ export default function Home() {
   const [currentScreen, setCurrentScreen] = useState(0);
 
   function handleNextClick() {
-    setCurrentScreen(currentScreen + 1);
+    if (currentScreen < screens.length - 1) {
+      setCurrentScreen(currentScreen + 1);
+    }
+  }
+
+  function handlePreviousClick() {
+    if (currentScreen > 0) {
+      setCurrentScreen(currentScreen - 1);
+    }
   }
 
   return (
@@ -41,7 +61,7 @@ export default function Home() {
           <img src={screens[currentScreen].img} />
         </div>
         <footer>
-          {screens[currentScreen].backButton && <button>{screens[currentScreen].backButton}</button>}
+          {<button onClick={handlePreviousClick}>{screens[currentScreen].backButton}</button>}
           {screens[currentScreen].nextButton && <button onClick={handleNextClick}>{screens[currentScreen].nextButton}</button>}
         </footer>
       </main>
@@ -49,12 +69,20 @@ export default function Home() {
 
 
       <style jsx>{`
+
+
+        body {
+          overflow: hidden;
+        }
+
+
         main {
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          width: 100%;
         }
 
         a {
@@ -168,7 +196,14 @@ export default function Home() {
 
         .img-container {
           position: fixed;
-          bottom: -30px
+          bottom: -30px;
+          z-index: 0;
+        }
+
+        .img-container {
+          position: relative;
+          bottom: 0;
+          z-index: 0;
         }
 
 
@@ -184,6 +219,7 @@ export default function Home() {
           z-index: 10000;
           display: flex;
           align-items: center;
+          justify-content: center;
           font-size: 24px;
         }
 
