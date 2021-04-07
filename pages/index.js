@@ -107,6 +107,10 @@ export default function Home() {
           {screens[currentScreen].text}
         </div>
 
+        {/* <div className="prompt" dangerouslySetInnerHTML={{ __html: screens[currentScreen].text.replace(/ /g, '&nbsp;') }}>
+
+        </div> */}
+
         <div className="img-container">
           <img src={screens[currentScreen].img} />
         </div>
@@ -262,16 +266,16 @@ export default function Home() {
           border: 2px solid #B3A125;
           border-radius: 5px;
           width: 90%;
-          padding: 1em;
+          padding: .5em;
           margin: 12px;
           background: white;
-          min-height: 150px;
+          min-height: 140px;
           position: relative;
           z-index: 10000;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 24px;
+          font-size: 22px;
         }
 
         footer {
