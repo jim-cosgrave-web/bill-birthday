@@ -138,6 +138,8 @@ export default function Home() {
   function handlePreviousClick() {
     if (currentScreen > 0) {
       setCurrentScreen(currentScreen - 1);
+    } else {
+      setOnFirstScreen(true);
     }
   }
 
