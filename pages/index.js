@@ -119,9 +119,9 @@ export default function Home() {
     }
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(16);
+  const [currentScreen, setCurrentScreen] = useState(0);
   const [showNext, setShowNext] = useState(true);
-  const [onFirstScreen, setOnFirstScreen] = useState(false);
+  const [onFirstScreen, setOnFirstScreen] = useState(true);
 
   function handleNextClick() {
     setShowNext(false);
@@ -160,7 +160,8 @@ export default function Home() {
       </Head>
 
       {onFirstScreen && <main className="huge" onClick={handleSplashClick}>
-        <img className="center" src="images/happy-birthday.png" />
+        <div className="splash-text">Happy Birthday Bill!</div>
+        <img className="center" src="images/happy-birthday-splash.png" />
       </main>}
 
       {!onFirstScreen && <main>
@@ -203,6 +204,11 @@ export default function Home() {
 
         .huge {
           min-height: 20000px;
+        }
+
+        .splash-text {
+          position: absolute;
+          z-index: 10000;
         }
 
 
