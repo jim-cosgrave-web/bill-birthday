@@ -4,12 +4,6 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
   const [screens, setScreens] = useState([
     {
-      text: 'Happy Birthday Bill!',
-      img: 'images/pokeball.png',
-      backButton: '<<',
-      nextButton: 'Lets go!'
-    },
-    {
       text: 'Hello Bill!  Would you like to help me with some research?',
       img: 'images/prof-oak-3.png',
       backButton: '<<',
@@ -40,7 +34,7 @@ export default function Home() {
       nextButton: 'Next'
     },
     {
-      text: 'Grass type pokemon are strong against water type pokemon, but are weak against water type pokemon',
+      text: 'Grass type pokemon are strong against water type pokemon, but are weak against fire type pokemon',
       img: 'images/grass-type-pokemon.jpg',
       backButton: '<<',
       nextButton: 'Next'
@@ -80,8 +74,16 @@ export default function Home() {
   ]);
 
   const [currentScreen, setCurrentScreen] = useState(0);
+  const [showNext, setShowNext] = useState(true);
+  const [onFirstScreen, setOnFirstScreen] = useState(true);
 
   function handleNextClick() {
+    setShowNext(false);
+
+    setTimeout(() => {
+      setShowNext(true);
+    }, 3000);
+
     if (currentScreen < screens.length - 1) {
       setCurrentScreen(currentScreen + 1);
     }
@@ -93,13 +95,29 @@ export default function Home() {
     }
   }
 
+  function getConatinerClass() {
+    if (onFirstScreen) {
+      return 'container-splash';
+    }
+
+    return 'container';
+  }
+
+  function handleSplashClick() {
+    setOnFirstScreen(false);
+  }
+
   return (
-    <div className="container">
+    <div className={getConatinerClass()}>
       <Head>
         <title>Happy Birthday Bill!</title>
       </Head>
 
-      <main>
+      {onFirstScreen && <main className="huge" onClick={handleSplashClick}>
+        <img className="center" src="images/happy-birthday.png" />
+      </main>}
+
+      {!onFirstScreen && <main>
         {/* <h1 className="title">
           Test Site
         </h1> */}
@@ -116,9 +134,9 @@ export default function Home() {
         </div>
         <footer>
           {<button onClick={handlePreviousClick}>{screens[currentScreen].backButton}</button>}
-          {screens[currentScreen].nextButton && <button onClick={handleNextClick}>{screens[currentScreen].nextButton}</button>}
+          {screens[currentScreen].nextButton && showNext && <button onClick={handleNextClick}>{screens[currentScreen].nextButton}</button>}
         </footer>
-      </main>
+      </main>}
 
 
 
@@ -127,6 +145,18 @@ export default function Home() {
 
         body {
           overflow: hidden;
+        }
+
+        .center {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          translate: (-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+
+        .huge {
+          min-height: 20000px;
         }
 
 
@@ -230,7 +260,9 @@ export default function Home() {
 
 
 
-
+        .container-splash {
+          background-color: white;
+        }
 
 
         .container {
@@ -320,7 +352,7 @@ export default function Home() {
             sans-serif;
 
           min-height: 10000px;
-          background: rgb(247, 247, 247);
+          background: white;
           overflow: hidden;
         }
 
