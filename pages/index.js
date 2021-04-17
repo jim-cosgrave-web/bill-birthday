@@ -157,6 +157,7 @@ export default function Home() {
     <div className={getConatinerClass()}>
       <Head>
         <title>Happy Birthday Bill!</title>
+
       </Head>
 
       {onFirstScreen && <main className="huge" onClick={handleSplashClick}>
@@ -207,8 +208,15 @@ export default function Home() {
         }
 
         .splash-text {
-          position: absolute;
+          position: fixed;
           z-index: 10000;
+          left: 16px;
+          top: 16px;
+          font-family: 'Segoe UI', Verdana, sans-serif;
+          font-size: 44px;
+          font-weight: bold;
+          color: rgb(239, 203, 38);
+          color: rgb(73, 92, 165);
         }
 
 
