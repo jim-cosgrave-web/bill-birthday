@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
   const [screens, setScreens] = useState([
     {
-      text: 'Hello Bill!  Would you like to help me with some research?',
-      img: 'images/prof-oak-3.png',
+      text: 'Hello Bill!  I hear its your birthday!  Would you like to help me with some research?',
+      img: 'images/prof-oak-2.png',
       backButton: '<<',
       nextButton: 'Yes!'
     },
@@ -41,7 +41,7 @@ export default function Home() {
     },
     {
       text: 'I want to study a few pokemon of different types.  This will help us become better pokemon trainers.  Will you help me?',
-      img: 'images/prof-oak-3.png',
+      img: 'images/prof-oak-2.png',
       backButton: '<<',
       nextButton: 'Yes!'
     },
@@ -68,21 +68,67 @@ export default function Home() {
       img: 'images/grass.png',
       backButton: '<<',
       nextButton: 'Okay!'
+    },
+    {
+      text: 'You caught a Bulbasaur?',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'Next up is Squirtle!',
+      img: 'images/squirtle.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'Squirtle is a water type pokemon, so he loves being by water.',
+      img: 'images/water-landscape.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'My student Ash found some Squirtle near this location.  Can you check it out?',
+      img: 'images/water-landscape.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'You caught a Squirtle?',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'Next up is Charmander!',
+      img: 'images/charmander.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
     }
-
-
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState(16);
   const [showNext, setShowNext] = useState(true);
-  const [onFirstScreen, setOnFirstScreen] = useState(true);
+  const [onFirstScreen, setOnFirstScreen] = useState(false);
 
   function handleNextClick() {
     setShowNext(false);
 
     setTimeout(() => {
       setShowNext(true);
-    }, 3000);
+    }, 1000);
 
     if (currentScreen < screens.length - 1) {
       setCurrentScreen(currentScreen + 1);
@@ -270,7 +316,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-color: rgb(247,247,247);
+          
         }
 
         h1 {
