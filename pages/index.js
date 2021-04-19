@@ -163,7 +163,7 @@ export default function Home() {
       </Head>
 
       {onFirstScreen && <main className="huge" onClick={handleSplashClick}>
-        <div className="splash-text">Happy Birthday Bill!</div>
+        {/* <div className="splash-text">Happy Birthday Bill!</div> */}
         <img className="center" src="images/happy-birthday-splash.png" />
       </main>}
 
