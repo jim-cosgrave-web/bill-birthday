@@ -167,7 +167,7 @@ export default function Home() {
     }
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(15);
+  const [currentScreen, setCurrentScreen] = useState(0);
   const [showNext, setShowNext] = useState(true);
   const [onFirstScreen, setOnFirstScreen] = useState(true);
 
