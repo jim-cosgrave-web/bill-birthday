@@ -64,8 +64,8 @@ export default function Home() {
       nextButton: 'Okay!'
     },
     {
-      text: 'Another trainer sent me this picture and said she saw some bulbasaur near by.  Can you check out this location?',
-      img: 'images/grass.png',
+      text: 'My student Misty sent me this picture and said she saw some bulbasaur near by.  Can you check out this location?',
+      img: 'images/plant.png',
       backButton: '<<',
       nextButton: 'Okay!'
     },
@@ -95,7 +95,7 @@ export default function Home() {
     },
     {
       text: 'My student Ash found some Squirtle near this location.  Can you check it out?',
-      img: 'images/water-landscape.png',
+      img: 'images/bathroom.png',
       backButton: '<<',
       nextButton: 'Yes!'
     },
@@ -116,10 +116,58 @@ export default function Home() {
       img: 'images/charmander.png',
       backButton: '<<',
       nextButton: 'Okay!'
+    },
+    {
+      text: 'Charmander is a fire type pokemon.  These pokemon like being near things that get really hot!',
+      img: 'images/fire-pokemon.jpg',
+      backButton: '<<',
+      nextButton: 'Oh?'
+    },
+    {
+      text: 'I heard that this is a good location to find a Charmander.  Go see what you can find!',
+      img: 'images/fireplace.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'You caught a Charmander?',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'Finally I want to study the Ghost and Poison-type Pokemon Gengar.',
+      img: 'images/gengar.png',
+      backButton: '<<',
+      nextButton: 'Ah!'
+    },
+    {
+      text: 'Gengar likes to hide in dark places and play tricks on people.  Be careful!',
+      img: 'images/basement.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'You caught a Gengar?',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Next'
     }
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState(15);
   const [showNext, setShowNext] = useState(true);
   const [onFirstScreen, setOnFirstScreen] = useState(true);
 
