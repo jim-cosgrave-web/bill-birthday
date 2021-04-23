@@ -19,7 +19,7 @@ export default function Home() {
       text: 'This is the world of pokemon.  There are many different types of pokemon all with strengths and weaknesses.',
       img: 'images/world-map.png',
       backButton: '<<',
-      nextButton: 'Next'
+      nextButton: 'Ash and Goh!'
     },
     {
       text: 'Fire type pokemon are strong against grass type pokemon, but they are weak against water type pokemon',
@@ -52,7 +52,7 @@ export default function Home() {
       nextButton: 'Okay!'
     },
     {
-      text: 'First I want to start with a grass type pokemon called Bulbasaur',
+      text: 'Lets start with the grass type pokemon called Bulbasaur',
       img: 'images/bulbasaur.png',
       backButton: '<<',
       nextButton: 'Okay!'
@@ -67,40 +67,10 @@ export default function Home() {
       text: 'My student Misty sent me this picture and said she saw some bulbasaur near by.  Can you check out this location?',
       img: 'images/plant.png',
       backButton: '<<',
-      nextButton: 'Okay!'
+      nextButton: 'Sure can!'
     },
     {
       text: 'You caught a Bulbasaur?',
-      img: 'images/prof-oak-2.png',
-      backButton: '<<',
-      nextButton: 'Yes!'
-    },
-    {
-      text: 'Great!',
-      img: 'images/prof-oak.png',
-      backButton: '<<',
-      nextButton: 'Next'
-    },
-    {
-      text: 'Next up is Squirtle!',
-      img: 'images/squirtle.png',
-      backButton: '<<',
-      nextButton: 'Okay!'
-    },
-    {
-      text: 'Squirtle is a water type pokemon, so he loves being by water.',
-      img: 'images/water-landscape.png',
-      backButton: '<<',
-      nextButton: 'Next'
-    },
-    {
-      text: 'My student Ash found some Squirtle near this location.  Can you check it out?',
-      img: 'images/bathroom.png',
-      backButton: '<<',
-      nextButton: 'Yes!'
-    },
-    {
-      text: 'You caught a Squirtle?',
       img: 'images/prof-oak-2.png',
       backButton: '<<',
       nextButton: 'Yes!'
@@ -142,6 +112,36 @@ export default function Home() {
       nextButton: 'Next'
     },
     {
+      text: 'Next up is Squirtle!',
+      img: 'images/squirtle.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'Squirtle is a water type pokemon, so he loves being by water.',
+      img: 'images/water-landscape.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
+      text: 'My student Ash found some Squirtle near this location.  Can you check it out?',
+      img: 'images/bathroom.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'You caught a Squirtle?',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Yes!'
+    },
+    {
+      text: 'Great!',
+      img: 'images/prof-oak.png',
+      backButton: '<<',
+      nextButton: 'Next'
+    },
+    {
       text: 'Finally I want to study the Ghost and Poison-type Pokemon Gengar.',
       img: 'images/gengar.png',
       backButton: '<<',
@@ -164,12 +164,47 @@ export default function Home() {
       img: 'images/prof-oak.png',
       backButton: '<<',
       nextButton: 'Next'
+    },
+    {
+      text: 'Thanks Bill.  You caught all the pokemon I was hoping to study!',
+      img: 'images/prof-oak-final.jpg',
+      backButton: '<<',
+      nextButton: 'No problem!'
+    },
+    {
+      text: 'I guess we\'re all done for the day.  See you later.',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'See ya!'
+    },
+    {
+      text: 'Wait a minute.  Do you hear that?  It sounds like a pokemon battle!',
+      img: 'images/prof-oak-surprised-1.png',
+      backButton: '<<',
+      nextButton: 'I can hear it!'
+    },
+    {
+      text: 'The sound is coming from over there!  Go check it out!',
+      img: 'images/basement.png',
+      backButton: '<<',
+      nextButton: 'Okay!'
+    },
+    {
+      text: 'I hope you had a good time.  Thanks again, and happy birthday!',
+      img: 'images/prof-oak-2.png',
+      backButton: '<<',
+      nextButton: 'Thank you!'
+    },
+    {
+
+      img: 'images/final.jpg',
+      backButton: '<<'
     }
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState(25);
   const [showNext, setShowNext] = useState(true);
-  const [onFirstScreen, setOnFirstScreen] = useState(true);
+  const [onFirstScreen, setOnFirstScreen] = useState(false);
 
   function handleNextClick() {
     setShowNext(false);
@@ -219,9 +254,9 @@ export default function Home() {
         {/* <h1 className="title">
           Test Site
         </h1> */}
-        <div className="prompt">
+        {screens[currentScreen].text && <div className="prompt">
           {screens[currentScreen].text}
-        </div>
+        </div>}
 
         {/* <div className="prompt" dangerouslySetInnerHTML={{ __html: screens[currentScreen].text.replace(/ /g, '&nbsp;') }}>
 
@@ -438,7 +473,7 @@ export default function Home() {
         }
 
         button {
-          padding: 12px 30px;
+          padding: 12px 12px;
           background: #CC0000;
           color: #fff;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -446,9 +481,10 @@ export default function Home() {
             sans-serif;
           font-size: 20px;
           border: 0;
-          width: 30%;
+          width: 45%;
           border: 1px solid #000;
           border-radius: 5px;
+          text-align: center;
         }
       `}</style>
 
