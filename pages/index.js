@@ -185,7 +185,7 @@ export default function Home() {
     },
     {
       text: 'The sound is coming from over there!  Go check it out!',
-      img: 'images/basement.png',
+      img: 'images/battle.png',
       backButton: '<<',
       nextButton: 'Okay!'
     },
@@ -202,9 +202,9 @@ export default function Home() {
     }
   ]);
 
-  const [currentScreen, setCurrentScreen] = useState(25);
+  const [currentScreen, setCurrentScreen] = useState(0);
   const [showNext, setShowNext] = useState(true);
-  const [onFirstScreen, setOnFirstScreen] = useState(false);
+  const [onFirstScreen, setOnFirstScreen] = useState(true);
 
   function handleNextClick() {
     setShowNext(false);
